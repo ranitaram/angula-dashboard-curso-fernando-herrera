@@ -7,24 +7,20 @@ import { Component,  } from '@angular/core';
 })
 export class ProgressComponent  {
 
-  progreso: number = 20;
+ progreso1: number = 25;
+ progreso2: number = 50;
 
-  get getPorcentaje(){
-    return `${this.progreso}%`;
-  }
+ get getProgreso1(){
+   return `${this.progreso1}%`;
+ }
 
-  cambiarValor(valor: number): 100 | 0 | undefined {
-    //validacion para que no pase mas de su rango y tengamos un bug
+ get getProgreso2(){
+   return `${this.progreso2}%`;
+ }
 
-    if(this.progreso >= 100 && valor >= 0){
-      return this.progreso = 100;
-    }
-
-    if (this.progreso <= 0 && valor < 0) {
-      return this.progreso = 0;
-    }
-
-    this.progreso = this.progreso + valor;
-  }
+ //que hacer cuando se emite el evento de salida
+//  cambioValorHijo(valor: number){
+//    console.log('Hey!!!!!', valor);
+//  }
   
 }
