@@ -4,7 +4,12 @@
             <div class="card-body">
                 <h4 class="card-title">Striped Progress bar </h4>
                 <div class="progress m-t-20">
-                    <div class="progress-bar bg-primary progress-bar-striped active" style="width: 55%; height:10px;" role="progressbar"> <span class="sr-only">85% Complete (success)</span> </div>
+                    <div class="progress-bar bg-primary progress-bar-striped active" 
+                         style="height:10px;" 
+                         [style.width]="getPorcentaje"
+                         role="progressbar"> 
+                        
+                        </div>
                 </div>
             </div>
         </div>
@@ -17,16 +22,23 @@
             <div class="card-body">
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" 
+                        <button class="btn btn-primary"
+                                (click)="cambiarValor(-5)" 
                                 type="button">
                             <i class="fa fa-minus"></i>
                             </button>
                     </span>
                     
-                    <input type="text" class="form-control" placeholder="Product name">
+                    <!-- Para poder utilizar el ngModel en el input necesito importar
+                    el @angularForms en el modulo respectivo que lo vayamos a utilizar, en este caso el pagesModule -->
+                    <input type="number" 
+                            class="form-control" 
+                            placeholder="Progreso"
+                            [(ngModel)]="progreso">
                    
                     <span class="input-group-btn">
                         <button class="btn btn-primary" 
+                        (click)="cambiarValor(5)"
                         type="button">
                     <i class="fa fa-plus"></i>
                     </button>
