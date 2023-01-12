@@ -1,15 +1,25 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
   templateUrl: './incrementador.component.html',
   styleUrls: ['./incrementador.component.css']
 })
-export class IncrementadorComponent {
+export class IncrementadorComponent implements OnInit {
+  
+  ngOnInit(){
+    this.btnClass = `btn ${this.btnClass}`;
+  }
 
   //este metodo para renombrar valores
   @Input('valor') progreso: number = 40; 
   //@Input() progreso: number = 50;
+
+  //clase del btn para cambiar de color el menos y mas del progress
+  @Input() btnClass: string = 'btn-primary';
+
+
+
   @Output() valorSalida: EventEmitter<number> = new EventEmitter();
 
   // get getPorcentaje(){
