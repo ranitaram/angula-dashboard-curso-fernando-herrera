@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule} from '@angular/forms'
 import { AppRoutingModule } from '../app-routing.module';
-
+import { NgChartsModule } from 'ng2-charts';
 //Modulos
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
@@ -25,6 +25,7 @@ import { PagesComponent } from './pages.component';
   imports: [
     CommonModule,
     SharedModule,
+    NgChartsModule,
     AppRoutingModule,
     FormsModule,
     ComponentsModule
