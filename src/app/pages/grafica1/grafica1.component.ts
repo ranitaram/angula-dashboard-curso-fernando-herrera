@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
 @Component({
@@ -8,17 +8,37 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 })
 export class Grafica1Component {
 
-  public doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
-  public doughnutChartData: ChartData<'doughnut'> = {
-    labels: this.doughnutChartLabels,
-    datasets: [
-      { data: [ 350, 450, 100 ],
-      backgroundColor: ['#000','#ccc','#1e1e']
-      },
-      // { data: [ 50, 150, 120 ] },
-      // { data: [ 250, 130, 70 ] }
-    ]
-  };
-  public doughnutChartType: ChartType = 'doughnut';
+  
+  //grafica1.component  
+ 
+doughnutChartLabels: string[] = [ 'Pan', 'Refresco', 'Tacos' ];
+public data1:ChartData<'doughnut'> = {
+  labels: this.doughnutChartLabels,
+  datasets: [ {  data: [ 40, 10, 100 ],
+                 backgroundColor: ['#00821C','#09DB36','#024D0F'],
+                 hoverBackgroundColor: ['#00821C','#09DB36','#024D0F'],
+                 hoverBorderColor:['#000000','#000000','#00000003']
+              },
+            ]
 
+
+
+          }
+
+  
+  //grafica2.component  
+ 
+doughnutChartLabels2: string[] = [ 'Pan', 'Refresco', 'Tacos' ];
+public data2:ChartData<'doughnut'> = {
+  labels: this.doughnutChartLabels,
+  datasets: [ {  data: [ 10, 10, 50 ],
+                 backgroundColor: ['#00821C','#09DB36','#024D0F'],
+                 hoverBackgroundColor: ['#00821C','#09DB36','#024D0F'],
+                 hoverBorderColor:['#000000','#000000','#00000003']
+              },
+            ]
+
+
+
+          }        
 }
