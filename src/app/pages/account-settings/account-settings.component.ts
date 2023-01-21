@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountSettingsComponent implements OnInit {
 
+  //para verlo como una propiedad
+  public linkTheme = document.querySelector('#theme');
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeTheme( theme: string){
+    
+    const url = `./assets/css/colors/${theme}.css`;
+
+    //para cambiar el atributo
+    this.linkTheme?.setAttribute('href', url);
+    //para guardarlo en el localstorage y se guarda en memoria
+    localStorage.setItem('theme', url);
+
+    
   }
 
 }

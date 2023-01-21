@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/* el themecolors es el id y el selector la clase en account-settings 
+del html y de esta forma le ponemos el cursor de manita 
+cuando pase sobre los objetos de la lista
+*/
 #themecolors .selector {
     cursor: pointer;
 }
